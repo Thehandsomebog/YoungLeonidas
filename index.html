@@ -3,201 +3,362 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Young Leonidas</title>
+    <title>Young Leonidas | Interactive Peptide Atlas</title>
     <meta
       name="description"
-      content="Young Leonidas is the official landing page for the Young Leonidas presence on X."
+      content="Explore peptides through an interactive educational lab map covering foundations, metabolic signaling, skin repair, performance recovery, and research literacy."
     />
-    <meta name="theme-color" content="#f1e9dc" />
+    <meta name="theme-color" content="#e9efe7" />
     <link rel="canonical" href="https://youngleonidas.com/" />
-    <meta property="og:title" content="Young Leonidas" />
+    <meta property="og:title" content="Young Leonidas Peptide Atlas" />
     <meta
       property="og:description"
-      content="A clean landing page for the Young Leonidas X profile."
+      content="An interactive educational map for learning peptide foundations and major peptide topic areas."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://youngleonidas.com/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Young Leonidas" />
+    <meta name="twitter:title" content="Young Leonidas Peptide Atlas" />
     <meta
       name="twitter:description"
-      content="The official landing page for the Young Leonidas presence on X."
+      content="Explore peptide science through a clickable lab-campus map."
     />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="backdrop" aria-hidden="true"></div>
+    <div class="paper-grain" aria-hidden="true"></div>
+
     <header class="site-header">
-      <a class="brand" href="#top">
-        <span class="brand-mark">YL</span>
+      <a class="brand" href="#top" data-home-link>
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="peptide-logo" viewBox="0 0 72 72" focusable="false">
+            <path class="peptide-link" d="M14 13L28 29L42 13M28 29V56M46 16V54H60" />
+            <g class="peptide-nodes">
+              <circle class="node node-blue" cx="14" cy="13" r="6" />
+              <circle class="node node-gold" cx="28" cy="29" r="6.5" />
+              <circle class="node node-rose" cx="42" cy="13" r="6" />
+              <circle class="node node-mint" cx="28" cy="43" r="5.8" />
+              <circle class="node node-violet" cx="28" cy="56" r="6" />
+              <circle class="node node-gold" cx="46" cy="16" r="6" />
+              <circle class="node node-blue" cx="46" cy="34" r="5.8" />
+              <circle class="node node-mint" cx="46" cy="54" r="6" />
+              <circle class="node node-rose" cx="60" cy="54" r="6" />
+            </g>
+          </svg>
+        </span>
         <span class="brand-copy">
           <span class="brand-name">Young Leonidas</span>
-          <span class="brand-tag">Official domain</span>
+          <span class="brand-tag">Peptide Atlas</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#note">Profile</a>
-        <a href="#manifesto">About</a>
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
+      <nav class="site-nav" aria-label="Peptide sections">
+        <button class="nav-section is-active" type="button" data-nav-topic="foundations">Foundations</button>
+        <button class="nav-section" type="button" data-nav-topic="metabolic">Metabolic</button>
+        <button class="nav-section" type="button" data-nav-topic="recovery">Performance</button>
+        <button class="nav-section" type="button" data-nav-topic="skin">Skin / Repair</button>
+        <button class="nav-section" type="button" data-nav-topic="longevity">Longevity</button>
+        <button class="nav-section" type="button" data-nav-topic="research">Research Use</button>
       </nav>
     </header>
 
     <main id="top">
-      <section class="hero">
-        <div class="hero-stage">
-          <div class="hero-copy reveal">
-            <p class="eyebrow">Young Leonidas</p>
-            <h1>The web home behind the X profile.</h1>
-            <p class="hero-lead">
-              A quiet landing page for the account, the posts, and the public
-              trail connected to this name.
+      <section class="atlas-shell" id="atlas" aria-labelledby="atlas-title">
+        <h1 class="sr-only" id="atlas-title">Peptides interactive learning hub</h1>
+
+        <div class="atlas-layout">
+          <div class="campus-card" aria-label="Clickable peptide campus map">
+            <img
+              class="campus-art"
+              src="./assets/peptide-learning-hub.png"
+              alt="Illustrated peptide learning hub campus with performance, metabolic, foundations, skin repair, longevity, and research wings"
+            />
+            <svg class="campus-map" viewBox="0 0 1100 720" role="img" aria-labelledby="map-title map-desc">
+              <title id="map-title">Peptide learning campus</title>
+              <desc id="map-desc">
+                An illustrated campus map with clickable topic areas for peptide education.
+              </desc>
+              <defs>
+                <pattern id="pavers" width="28" height="28" patternUnits="userSpaceOnUse">
+                  <path d="M0 14H28M14 0V28" stroke="#c8d0c4" stroke-width="1" opacity=".65" />
+                </pattern>
+              </defs>
+              <rect x="0" y="0" width="1100" height="720" rx="34" fill="#edf2eb" />
+              <path d="M50 560C220 470 330 455 480 515C655 585 770 545 1045 390" fill="none" stroke="#c6d3c5" stroke-width="90" stroke-linecap="round" />
+              <path d="M60 565C225 485 335 470 480 528C660 600 785 552 1038 405" fill="none" stroke="#f8f6ec" stroke-width="62" stroke-linecap="round" />
+              <path d="M575 78L990 315L710 450L292 210Z" fill="#dfe6df" stroke="#9aa89e" stroke-width="3" />
+              <path d="M575 120L914 313L710 411L368 216Z" fill="url(#pavers)" opacity=".72" />
+              <g class="building foundations">
+                <path d="M116 92H392L426 128V310H82V128Z" fill="#faf8ef" stroke="#23302c" stroke-width="4" />
+                <path d="M116 92L82 128H426L392 92Z" fill="#cfd8d1" stroke="#23302c" stroke-width="4" />
+                <path d="M132 150H376V276H132Z" fill="#e8f0ea" stroke="#8a9c91" stroke-width="2" />
+                <path d="M158 190H350M158 226H350" stroke="#9caea3" stroke-width="4" />
+                <circle cx="188" cy="238" r="20" fill="#86a7c8" />
+                <circle cx="254" cy="202" r="20" fill="#d88d78" />
+                <circle cx="322" cy="238" r="20" fill="#a8bd79" />
+              </g>
+              <g class="building metabolic">
+                <path d="M520 72H764L810 126V292H476V126Z" fill="#fff8eb" stroke="#23302c" stroke-width="4" />
+                <path d="M520 72L476 126H810L764 72Z" fill="#d7d0bf" stroke="#23302c" stroke-width="4" />
+                <rect x="548" y="142" width="188" height="78" rx="39" fill="#e7bb69" stroke="#7e6330" stroke-width="3" />
+                <path d="M585 182H700" stroke="#fff7df" stroke-width="13" stroke-linecap="round" />
+                <path d="M616 244C654 218 696 218 732 244" fill="none" stroke="#c87863" stroke-width="13" stroke-linecap="round" />
+              </g>
+              <g class="building skin">
+                <path d="M770 390H1022L1050 424V626H742V424Z" fill="#fff5ee" stroke="#23302c" stroke-width="4" />
+                <path d="M770 390L742 424H1050L1022 390Z" fill="#e0c9bb" stroke="#23302c" stroke-width="4" />
+                <rect x="792" y="452" width="210" height="38" fill="#e9b29b" />
+                <rect x="792" y="490" width="210" height="56" fill="#f2cdbb" />
+                <rect x="792" y="546" width="210" height="42" fill="#ead687" />
+                <path d="M828 474C828 532 872 508 872 582M940 474C940 535 900 518 900 588" fill="none" stroke="#536f7f" stroke-width="5" />
+              </g>
+              <g class="building recovery">
+                <path d="M142 410H395L430 446V638H104V446Z" fill="#f9fbf4" stroke="#23302c" stroke-width="4" />
+                <path d="M142 410L104 446H430L395 410Z" fill="#cfd8d1" stroke="#23302c" stroke-width="4" />
+                <path d="M165 574C217 496 285 492 365 552" fill="none" stroke="#8aa66e" stroke-width="16" stroke-linecap="round" />
+                <path d="M178 528L222 555L270 512L342 548" fill="none" stroke="#344a43" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <g class="building research">
+                <path d="M480 420H716L748 454V642H448V454Z" fill="#f4f7fb" stroke="#23302c" stroke-width="4" />
+                <path d="M480 420L448 454H748L716 420Z" fill="#c9d4dc" stroke="#23302c" stroke-width="4" />
+                <rect x="510" y="474" width="172" height="104" rx="14" fill="#ffffff" stroke="#8da0ad" stroke-width="3" />
+                <path d="M538 505H653M538 532H626M538 559H664" stroke="#6d8495" stroke-width="8" stroke-linecap="round" />
+              </g>
+              <g class="tree-cluster" fill="#8ba56e" stroke="#43533b" stroke-width="3">
+                <circle cx="75" cy="365" r="30" />
+                <circle cx="1030" cy="170" r="34" />
+                <circle cx="655" cy="690" r="25" />
+                <circle cx="990" cy="680" r="26" />
+                <circle cx="52" cy="665" r="28" />
+              </g>
+            </svg>
+
+            <button class="map-pin is-active" type="button" data-topic="foundations" style="--x: 50%; --y: 37%;">
+              <span>Foundations</span>
+            </button>
+            <button class="map-pin" type="button" data-topic="metabolic" style="--x: 18%; --y: 57%;">
+              <span>Metabolic</span>
+            </button>
+            <button class="map-pin" type="button" data-topic="skin" style="--x: 80%; --y: 28%;">
+              <span>Skin / Repair</span>
+            </button>
+            <button class="map-pin" type="button" data-topic="longevity" style="--x: 50%; --y: 73%;">
+              <span>Longevity</span>
+            </button>
+            <button class="map-pin" type="button" data-topic="recovery" data-deep-dive="performance" style="--x: 17%; --y: 19%;">
+              <span>Performance</span>
+            </button>
+            <button class="map-pin" type="button" data-topic="research" style="--x: 78%; --y: 61%;">
+              <span>Research Use</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="deep-dive-screen" id="topic-lab" aria-labelledby="room-main-title" hidden>
+        <div class="room-topbar">
+          <button class="back-button" type="button" id="back-to-hub">Back to Hub</button>
+          <div>
+            <p class="eyebrow">Deep dive map</p>
+            <h2 id="room-main-title">Performance / Recovery Peptides</h2>
+            <p id="room-subtitle">Support. Adapt. Recover. Separate mechanism from claim.</p>
+          </div>
+        </div>
+
+        <div class="room-map" id="room-map" data-room-theme="recovery" aria-label="Interactive peptide deep-dive room">
+          <button class="art-back-button" type="button" id="art-back-to-hub">Back to Hub</button>
+          <img
+            class="room-art"
+            id="room-art"
+            src="./assets/performance-recovery-lab.png"
+            alt="Illustrated performance and recovery lab with athlete training, peptide models, research boards, and recovery stations"
+          />
+          <div class="hotspot-layer" id="hotspot-layer" hidden></div>
+          <div class="hotspot-hint" id="hotspot-hint" hidden>Explore the room</div>
+          <aside class="info-drawer" id="info-drawer" aria-live="polite" hidden>
+            <button class="drawer-close" type="button" id="drawer-close" aria-label="Close lesson drawer">Close</button>
+            <p class="drawer-section-label" id="drawer-section-label">Longevity / Cellular</p>
+            <h3 id="drawer-title">Cellular Energy &amp; NAD+ Pathways</h3>
+            <p class="drawer-subtitle" id="drawer-subtitle">
+              How cells produce, recycle, and manage energy over time.
             </p>
-            <div class="hero-actions">
-              <a
-                class="button button-primary"
-                href="https://x.com/djvk_n_coke"
-                target="_blank"
-                rel="me noreferrer"
-                >Follow on X</a
-              >
-              <a class="button button-secondary" href="#manifesto"
-                >Read the note</a
-              >
+            <p class="drawer-body" id="drawer-body"></p>
+            <div class="drawer-block">
+              <h4>Key Takeaways</h4>
+              <ul id="drawer-takeaways"></ul>
             </div>
-          </div>
-
-          <div class="hero-visual reveal" aria-hidden="true">
-            <div class="hero-orb"></div>
-            <div class="hero-grid"></div>
-            <div class="hero-monogram">YL</div>
-            <div class="hero-caption">
-              <span>youngleonidas.com</span>
-              <span>Official landing page</span>
+            <div class="drawer-block" id="drawer-supplement-block" hidden>
+              <h4 id="drawer-supplement-title">Simple Process</h4>
+              <div class="drawer-supplement-content" id="drawer-supplement-content"></div>
             </div>
+            <div class="drawer-block">
+              <h4 id="drawer-note-title">Research Context</h4>
+              <p id="drawer-research-note"></p>
+            </div>
+            <div class="drawer-block">
+              <h4>Related</h4>
+              <div class="drawer-related" id="drawer-related"></div>
+            </div>
+          </aside>
+          <div class="room-scene" id="room-scene" aria-hidden="true">
+            <div class="scene-window"></div>
+            <div class="scene-board">
+              <span id="scene-label">Train. Adapt. Recover.</span>
+            </div>
+            <div class="scene-molecule"></div>
+            <div class="scene-counter"></div>
           </div>
-        </div>
 
-        <div class="proof-strip reveal" id="note" aria-label="Profile summary">
-          <div>
-            <span class="proof-label">Profile</span>
-            <p>@djvk_n_coke</p>
-          </div>
-          <div>
-            <span class="proof-label">Purpose</span>
-            <p>Send visitors directly to the X account.</p>
-          </div>
-          <div>
-            <span class="proof-label">Surface</span>
-            <p>Homepage, privacy policy, and terms.</p>
-          </div>
-        </div>
-      </section>
+          <aside class="room-card room-card--list" aria-labelledby="room-list-title">
+            <h3 id="room-list-title">Key peptides</h3>
+            <div class="peptide-list" id="room-peptide-list"></div>
+          </aside>
 
-      <section class="story reveal" id="manifesto">
-        <div class="section-shell story-shell">
-          <div class="section-heading">
-            <p class="eyebrow">About</p>
-            <h2>Clear enough to scan in seconds.</h2>
-          </div>
-          <div class="story-grid">
-            <p>
-              This page exists for one reason: to give the Young Leonidas
-              profile a stable place on its own domain.
-            </p>
-            <p>
-              It avoids feed noise, over-explaining, and generic social landing
-              page clutter. The first screen says what it is and where to go.
-            </p>
-            <p>
-              The design stays light, editorial, and restrained so the name is
-              louder than the chrome around it.
-            </p>
-            <p>
-              Legal pages are included, the custom domain is wired, and the
-              profile link stays the primary action throughout.
-            </p>
-          </div>
-        </div>
-      </section>
+          <aside class="room-card room-card--benefits" aria-labelledby="room-benefits-title">
+            <h3 id="room-benefits-title">Potential research areas</h3>
+            <ul class="icon-list" id="room-benefits-list"></ul>
+          </aside>
 
-      <section class="focus reveal" id="ethos">
-        <div class="section-shell">
-          <div class="section-heading">
-            <p class="eyebrow">Focus</p>
-            <h2>Everything here supports one destination.</h2>
-          </div>
-          <div class="focus-list">
-            <article class="focus-row">
-              <span class="structure-label">01</span>
-              <h3>Own the domain</h3>
-              <p>
-                youngleonidas.com functions as the permanent web address behind
-                the profile.
-              </p>
-            </article>
-            <article class="focus-row">
-              <span class="structure-label">02</span>
-              <h3>Keep the message short</h3>
-              <p>
-                The homepage stays minimal so visitors reach the X profile with
-                no friction.
-              </p>
-            </article>
-            <article class="focus-row">
-              <span class="structure-label">03</span>
-              <h3>Stay public-facing</h3>
-              <p>
-                Privacy and terms pages give the site the basic structure it
-                should have without turning it into a corporate brochure.
-              </p>
-            </article>
+          <aside class="room-card room-card--flow" aria-labelledby="room-flow-title">
+            <h3 id="room-flow-title">How they work together</h3>
+            <ol class="flow-steps" id="room-flow-steps"></ol>
+            <p id="room-flow-note">
+              Map claims to mechanisms, context, and evidence before making any interpretation.
+            </p>
+          </aside>
+
+          <aside class="room-card room-card--notes" aria-labelledby="room-notes-title">
+            <h3 id="room-notes-title">Important notes</h3>
+            <ul class="check-list" id="room-notes-list"></ul>
+          </aside>
+
+          <aside class="room-inspector" aria-live="polite">
+            <span id="room-kicker">Key peptides</span>
+            <h3 id="room-title">Peptides people ask about first</h3>
+            <p id="room-summary">
+              BPC-157, TB-500/thymosin beta-4 discussions, thymosin alpha-1, and
+              epitalon-style topics show up often in recovery conversations.
+            </p>
+          </aside>
+
+          <div class="room-footer" aria-label="Educational principles">
+            <span>Education First</span>
+            <span>Research Focused</span>
+            <span>Responsible Information</span>
+            <span>Always Do Your Own Research</span>
           </div>
         </div>
       </section>
 
-      <section class="cta reveal" id="contact">
-        <div class="section-shell cta-shell">
-          <div class="section-heading">
-            <p class="eyebrow">Follow</p>
-            <h2>Go straight to the profile.</h2>
+      <section class="peptide-library reveal" id="peptide-library" aria-labelledby="library-title">
+        <div class="library-topline">
+          <div>
+            <p class="eyebrow">Browsable peptide library</p>
+            <h2 id="library-title">Research dossiers, not product claims.</h2>
+            <p>
+              Browse peptide topics by biological system. Each dossier explains the
+              mechanism, research context, and what not to assume.
+            </p>
           </div>
-          <p class="cta-copy">
-            If you came here through the domain, the next move is simple.
-          </p>
-          <div class="hero-actions">
-            <a
-              class="button button-primary"
-              href="https://x.com/djvk_n_coke"
-              target="_blank"
-              rel="me noreferrer"
-              >Open X profile</a
-            >
-            <a class="button button-secondary" href="./privacy.html"
-              >Privacy policy</a
-            >
+          <article class="foundations-callout">
+            <span>Start here</span>
+            <h3>New to peptide biology?</h3>
+            <p>
+              Learn amino acids, peptide bonds, chain length, and signaling before
+              exploring applied topics.
+            </p>
+            <button class="library-foundations-button" type="button" data-library-foundations>
+              Open foundations
+            </button>
+          </article>
+        </div>
+
+        <div class="library-shell">
+          <div class="library-controls">
+            <div class="library-tabs" id="library-tabs" role="tablist" aria-label="Peptide library categories"></div>
+            <p class="library-active-note" id="library-active-note" aria-live="polite"></p>
           </div>
+
+          <div class="library-card-grid" id="library-card-grid"></div>
+        </div>
+
+        <button class="library-drawer-backdrop" id="library-drawer-backdrop" type="button" hidden aria-label="Close peptide dossier"></button>
+        <aside class="library-drawer" id="library-drawer" role="dialog" aria-modal="true" aria-labelledby="library-drawer-title" hidden>
+          <button class="library-drawer-close" id="library-drawer-close" type="button">Close</button>
+          <p class="library-drawer-kicker" id="library-drawer-kicker">Peptide dossier</p>
+          <h3 id="library-drawer-title">Peptide topic</h3>
+          <p class="library-drawer-summary" id="library-drawer-summary"></p>
+          <button class="library-room-button" id="library-room-button" type="button">
+            Explore related room
+          </button>
+
+          <div class="library-drawer-block">
+            <h4>Mechanism Snapshot</h4>
+            <p id="library-drawer-mechanism"></p>
+          </div>
+
+          <div class="library-drawer-block">
+            <h4>Research Context</h4>
+            <p id="library-drawer-context"></p>
+          </div>
+
+          <div class="library-drawer-block">
+            <h4>Safety Framing</h4>
+            <p id="library-drawer-caution"></p>
+          </div>
+
+          <div class="library-drawer-block">
+            <h4>Context Tags</h4>
+            <div class="library-chip-row" id="library-drawer-chips"></div>
+          </div>
+
+          <div class="library-drawer-block">
+            <h4>Related Dossiers</h4>
+            <div class="library-related" id="library-drawer-related"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="research-framing reveal" id="research-framing" aria-labelledby="research-framing-title">
+        <div>
+          <p class="eyebrow">How to read this library</p>
+          <h2 id="research-framing-title">Mechanism first. Claims last.</h2>
+        </div>
+        <div class="framing-grid">
+          <article>
+            <span>01</span>
+            <h3>Research context</h3>
+            <p>Peptide topics are framed as mechanisms, model systems, or clinical contexts, not self-use guidance.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Evidence boundaries</h3>
+            <p>Cards separate biological plausibility from human outcomes, internet lore, and unsupported claims.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>No protocols</h3>
+            <p>This site avoids dosing, sourcing, injury treatment, weight-loss promises, and medical instructions.</p>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-copy">
+      <div>
         <span class="brand-name">Young Leonidas</span>
-        <p>The official landing page for the Young Leonidas presence on X.</p>
+        <p>Interactive peptide education for curious readers.</p>
       </div>
       <nav class="footer-nav" aria-label="Footer">
-        <a href="https://x.com/djvk_n_coke" target="_blank" rel="me noreferrer"
-          >X</a
-        >
+        <a href="https://x.com/djvk_n_coke" target="_blank" rel="me noreferrer">X</a>
         <a href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>
       </nav>

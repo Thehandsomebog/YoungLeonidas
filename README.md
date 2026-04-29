@@ -1,14 +1,22 @@
 # Young Leonidas
 
-Static GitHub Pages site for the `YoungLeonidas` repository.
+Static GitHub Pages site for `youngleonidas.com`, now focused on an
+interactive educational peptide atlas.
 
 ## Included files
 
-- `index.html`: landing page
+- `index.html`: interactive peptide atlas landing page
+- `assets/peptide-campus-atlas.png`: main clickable campus image
+- `assets/foundations-of-peptides.png`: Foundations deep-dive room image
+- `assets/performance-recovery-lab.png`: Performance / Recovery deep-dive room image
+- `assets/metabolic-peptides.png`: Metabolic deep-dive room image
+- `assets/skin-repair-peptides.png`: Skin / Repair deep-dive room image
+- `assets/longevity-cellular-peptides.png`: Longevity / Cellular deep-dive room image
+- `assets/research-use-peptides.png`: Research Use deep-dive room image
 - `privacy.html`: privacy policy
 - `terms.html`: terms of service
 - `styles.css`: styling and responsive layout
-- `script.js`: reveal and pointer interactions
+- `script.js`: reveal, campus map, deep-dive room, hotspot, and peptide library interactions
 - `404.html`: custom not-found page
 - `.nojekyll`: serves the site directly without Jekyll processing
 - `CNAME`: custom domain binding for `youngleonidas.com`
@@ -32,12 +40,7 @@ The repo is configured for:
 youngleonidas.com
 ```
 
-## Social link
+## Content direction
 
-The landing page currently links to:
-
-```txt
-https://x.com/djvk_n_coke
-```
-
-If that handle is not correct, update the X links in `index.html`, `privacy.html`, and `terms.html`.
+The homepage is educational only. It avoids dosing, sourcing, treatment,
+diagnosis, cure, or self-administration guidance for peptides.
