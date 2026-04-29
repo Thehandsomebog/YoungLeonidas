@@ -6,7 +6,8 @@ interactive educational peptide atlas.
 ## Included files
 
 - `index.html`: interactive peptide atlas landing page
-- `assets/peptide-campus-atlas.png`: main clickable campus image
+- `assets/peptide-learning-hub.png`: main clickable campus image
+- `assets/peptide-campus-atlas.png`: alternate campus art asset
 - `assets/foundations-of-peptides.png`: Foundations deep-dive room image
 - `assets/performance-recovery-lab.png`: Performance / Recovery deep-dive room image
 - `assets/metabolic-peptides.png`: Metabolic deep-dive room image
