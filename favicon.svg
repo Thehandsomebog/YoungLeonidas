@@ -1,12 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Young Leonidas favicon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72" role="img" aria-label="Young Leonidas peptide logo">
   <defs>
-    <linearGradient id="bronze" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#efbb73" />
-      <stop offset="100%" stop-color="#b97c3d" />
+    <linearGradient id="bg" x1="0" y1="0" x2="72" y2="72">
+      <stop offset="0" stop-color="#1f3542" />
+      <stop offset="1" stop-color="#071c2a" />
     </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#020b12" flood-opacity="0.46" />
+    </filter>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0f0f10" />
-  <circle cx="32" cy="32" r="21" fill="none" stroke="url(#bronze)" stroke-width="2" opacity="0.85" />
-  <path d="M32 13 L36 27 L51 32 L36 37 L32 51 L28 37 L13 32 L28 27 Z" fill="url(#bronze)" />
-  <circle cx="32" cy="32" r="6" fill="#0f0f10" stroke="#f8f1e3" stroke-width="1.4" />
+
+  <rect x="4" y="4" width="64" height="64" rx="12" fill="url(#bg)" />
+  <rect
+    x="7"
+    y="7"
+    width="58"
+    height="58"
+    rx="9"
+    fill="none"
+    stroke="#fffdf5"
+    stroke-opacity="0.34"
+    stroke-width="2"
+  />
+
+  <g filter="url(#shadow)">
+    <path
+      d="M14 13L28 29L42 13M28 29V56M46 16V54H60"
+      fill="none"
+      stroke="#fffdf5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="4.2"
+      opacity="0.82"
+    />
+    <circle cx="14" cy="13" r="6" fill="#86a7c8" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="28" cy="29" r="6.5" fill="#e7bb69" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="42" cy="13" r="6" fill="#d88d78" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="28" cy="43" r="5.8" fill="#9fbe8b" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="28" cy="56" r="6" fill="#c5a0bd" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="46" cy="16" r="6" fill="#e7bb69" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="46" cy="34" r="5.8" fill="#86a7c8" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="46" cy="54" r="6" fill="#9fbe8b" stroke="#fffdf5" stroke-width="1.7" />
+    <circle cx="60" cy="54" r="6" fill="#d88d78" stroke="#fffdf5" stroke-width="1.7" />
+  </g>
 </svg>
