@@ -18,6 +18,15 @@
     <meta property="og:image" content="https://youngleonidas.com/assets/pet-atlas-hero-v1.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link
+      rel="preload"
+      as="image"
+      type="image/avif"
+      href="./assets/pet-atlas-hero-1200.avif"
+      imagesrcset="./assets/pet-atlas-hero-800.avif 800w, ./assets/pet-atlas-hero-1200.avif 1200w, ./assets/pet-atlas-hero-1568.avif 1568w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,7 +43,9 @@
         "description": "Evidence-aware peptide education for dog and cat owners.",
         "publisher": {
           "@type": "Organization",
-          "name": "Young Leonidas"
+          "@id": "https://youngleonidas.com/#organization",
+          "name": "Young Leonidas",
+          "url": "https://youngleonidas.com/"
         }
       }
     </script>
@@ -125,11 +136,22 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
-        <img
-          class="hero-image"
-          src="./assets/pet-atlas-hero-v1.png"
-          alt="A golden retriever and gray cat in a warm modern veterinary research studio"
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcset="./assets/pet-atlas-hero-800.avif 800w, ./assets/pet-atlas-hero-1200.avif 1200w, ./assets/pet-atlas-hero-1568.avif 1568w"
+            sizes="100vw"
+          />
+          <img
+            class="hero-image"
+            src="./assets/pet-atlas-hero-v1.png"
+            width="1568"
+            height="1003"
+            fetchpriority="high"
+            decoding="async"
+            alt="A golden retriever and gray cat in a warm modern veterinary research studio"
+          />
+        </picture>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-copy">
           <p class="kicker"><span></span> Pet health. Peptide science. No hype.</p>
@@ -156,14 +178,21 @@
       <section class="story-section section-wrap" id="story" aria-labelledby="story-title">
         <figure class="story-portrait">
           <div class="story-image-wrap">
-            <img
-              src="./assets/leonidas-story.jpg"
-              width="1350"
-              height="1800"
-              loading="lazy"
-              decoding="async"
-              alt="Leonidas, a twelve-year-old husky and the inspiration behind Young Leonidas"
-            />
+            <picture>
+              <source
+                type="image/avif"
+                srcset="./assets/leonidas-story-480.avif 480w, ./assets/leonidas-story-800.avif 800w, ./assets/leonidas-story-1080.avif 1080w"
+                sizes="(max-width: 860px) calc(100vw - 28px), 42vw"
+              />
+              <img
+                src="./assets/leonidas-story.jpg"
+                width="1350"
+                height="1800"
+                loading="lazy"
+                decoding="async"
+                alt="Leonidas, a twelve-year-old husky and the inspiration behind Young Leonidas"
+              />
+            </picture>
             <span class="story-age">12 years young</span>
           </div>
           <figcaption>Leonidas, the dog behind the name.</figcaption>
@@ -392,7 +421,7 @@
               <h3>BPC-157 research context</h3>
               <p>How tissue-model findings differ from approved veterinary treatment evidence.</p>
               <div class="evidence-row"><span class="evidence evidence-limited">Limited evidence</span></div>
-              <a class="dossier-link" href="./articles/tissue-repair-research.html">Open dossier <span>→</span></a>
+              <a class="dossier-link" href="./articles/bpc-157-for-dogs.html">Open dossier <span>→</span></a>
             </article>
 
             <article class="dossier-card" data-category="skin">
@@ -549,6 +578,8 @@
         <a href="#atlas">Atlas</a>
         <a href="#library">Library</a>
         <a href="./blog.html">Journal</a>
+        <a href="./about.html">About</a>
+        <a href="./editorial-policy.html">Editorial Policy</a>
         <a href="#future">Roadmap</a>
         <a href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>

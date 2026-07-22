@@ -27,7 +27,7 @@ assert.match(index, /Veterinary context is not an optional footnote/, "renders t
 assert.doesNotMatch(index, /Interactive Peptide Atlas/, "removes the retired human-focused title");
 
 assert.match(blog, /data-blog-filter="all"/, "renders journal filters");
-assert.match(blog, /4 launch articles/, "publishes the initial journal collection");
+assert.match(blog, /5 evidence guides/, "publishes the current journal collection");
 assert.match(blog, /application\/rss\+xml/, "advertises the RSS feed");
 assert.match(script, /const atlasContent\s*=/, "defines health atlas content");
 assert.match(script, /data-atlas-target/, "connects health concerns to atlas content");
@@ -36,12 +36,14 @@ assert.match(styles, /\.article-layout/, "includes long-form article layout styl
 assert.match(styles, /@media \(max-width: 620px\)/, "includes a mobile breakpoint");
 
 const articleNames = (await readdir(join(root, "articles"))).filter((name) => name.endsWith(".html"));
-assert.equal(articleNames.length, 4, "publishes four launch articles");
+assert.equal(articleNames.length, 5, "publishes five evidence articles");
 
 for (const name of articleNames) {
   const article = await readFile(join(root, "articles", name), "utf8");
   assert.match(article, /rel="canonical"/, `${name} has a canonical URL`);
   assert.match(article, /"@type":"BlogPosting"|"@type": "BlogPosting"/, `${name} has BlogPosting schema`);
+  assert.match(article, /"@type":"BreadcrumbList"|"@type": "BreadcrumbList"/, `${name} has breadcrumb schema`);
+  assert.match(article, /href="\.\.\/about\.html"/, `${name} links its author byline to the about page`);
   assert.match(article, /Veterinary safety note/, `${name} includes a veterinary safety note`);
   assert.match(article, /References/, `${name} includes references`);
   assert.match(sitemap, new RegExp(name.replace(".", "\\.")), `${name} appears in the sitemap`);
@@ -63,11 +65,20 @@ for (const utilityPage of ["privacy.html", "terms.html"]) {
 const htmlFiles = [
   "index.html",
   "blog.html",
+  "about.html",
+  "editorial-policy.html",
   "privacy.html",
   "terms.html",
   "404.html",
   ...articleNames.map((name) => join("articles", name)),
 ];
+
+for (const trustPage of ["about.html", "editorial-policy.html"]) {
+  assert.match(sitemap, new RegExp(trustPage.replace(".", "\\.")), `${trustPage} appears in the sitemap`);
+}
+
+assert.match(index, /pet-atlas-hero-800\.avif/, "serves a responsive AVIF hero");
+assert.match(index, /fetchpriority="high"/, "prioritizes the LCP hero image");
 
 for (const relativeFile of htmlFiles) {
   const filePath = join(root, relativeFile);

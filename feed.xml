@@ -5,8 +5,15 @@
     <link>https://youngleonidas.com/blog.html</link>
     <description>Species-aware educational articles about peptide biology and veterinary research.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 18:00:00 GMT</lastBuildDate>
     <atom:link href="https://youngleonidas.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BPC-157 for dogs: what the research actually shows</title>
+      <link>https://youngleonidas.com/articles/bpc-157-for-dogs.html</link>
+      <guid isPermaLink="true">https://youngleonidas.com/articles/bpc-157-for-dogs.html</guid>
+      <pubDate>Wed, 22 Jul 2026 18:00:00 GMT</pubDate>
+      <description>Canine pharmacokinetics, safety limitations, and the missing clinical evidence.</description>
+    </item>
     <item>
       <title>Why human peptide findings cannot simply be applied to pets</title>
       <link>https://youngleonidas.com/articles/translating-peptide-research-to-pets.html</link>
