@@ -43,6 +43,8 @@ for (const name of articleNames) {
   assert.match(article, /rel="canonical"/, `${name} has a canonical URL`);
   assert.match(article, /"@type":"BlogPosting"|"@type": "BlogPosting"/, `${name} has BlogPosting schema`);
   assert.match(article, /"@type":"BreadcrumbList"|"@type": "BreadcrumbList"/, `${name} has breadcrumb schema`);
+  assert.match(article, /"image":"https:\/\/youngleonidas\.com\/assets\/pet-atlas-hero-v1\.png"|"image": "https:\/\/youngleonidas\.com\/assets\/pet-atlas-hero-v1\.png"/, `${name} has an article image`);
+  assert.match(article, /"dateModified":"[^\"]+T[^\"]+-04:00"|"dateModified": "[^\"]+T[^\"]+-04:00"/, `${name} has a timezone-aware modified date`);
   assert.match(article, /href="\.\.\/about\.html"/, `${name} links its author byline to the about page`);
   assert.match(article, /Veterinary safety note/, `${name} includes a veterinary safety note`);
   assert.match(article, /References/, `${name} includes references`);
