@@ -14,6 +14,11 @@ const feed = await readFile(join(root, "feed.xml"), "utf8");
 assert.match(index, /Pet Peptide Atlas/, "uses the pet-focused brand");
 assert.match(index, /id="atlas"/, "renders the interactive health atlas");
 assert.match(index, /id="library"/, "renders the peptide library");
+assert.match(index, /id="concerns"/, "renders concern-led entry points");
+assert.match(index, /data-atlas-target="mobility"/, "connects concerns to atlas states");
+assert.match(index, /id="future"/, "explains the education-first commerce roadmap");
+assert.match(index, /id="faq-title"/, "answers core trust questions");
+assert.match(index, /"@type": "FAQPage"/, "publishes FAQ search metadata");
 assert.match(index, /species-button/, "renders the dog and cat selector");
 assert.match(index, /Veterinary context is not an optional footnote/, "renders the editorial safety standard");
 assert.doesNotMatch(index, /Interactive Peptide Atlas/, "removes the retired human-focused title");
@@ -22,6 +27,7 @@ assert.match(blog, /data-blog-filter="all"/, "renders journal filters");
 assert.match(blog, /4 launch articles/, "publishes the initial journal collection");
 assert.match(blog, /application\/rss\+xml/, "advertises the RSS feed");
 assert.match(script, /const atlasContent\s*=/, "defines health atlas content");
+assert.match(script, /data-atlas-target/, "connects health concerns to atlas content");
 assert.match(script, /dataset\.blogCategory/, "supports journal filtering");
 assert.match(styles, /\.article-layout/, "includes long-form article layout styles");
 assert.match(styles, /@media \(max-width: 620px\)/, "includes a mobile breakpoint");
@@ -54,7 +60,7 @@ for (const relativeFile of htmlFiles) {
   const hrefs = [...source.matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)].map((match) => match[1]);
   for (const href of hrefs) {
     if (/^(https?:|mailto:)/.test(href)) continue;
-    const resolved = normalize(join(dirname(filePath), href));
+    const resolved = normalize(join(dirname(filePath), href.split("?")[0]));
     await access(resolved).catch(() => {
       assert.fail(`${relativeFile} links to missing local file: ${href}`);
     });

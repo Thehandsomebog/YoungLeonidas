@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pet Peptide Atlas &amp; Veterinary Research Journal | Young Leonidas</title>
+    <title>Pet Peptide Education for Dogs &amp; Cats | Young Leonidas</title>
     <meta
       name="description"
-      content="Explore peptide biology, veterinary research context, and evidence-aware educational articles for dogs and cats."
+      content="Understand pet peptide research through clear guides to mobility, metabolism, skin health, healthy aging, and veterinary safety."
     />
     <meta name="theme-color" content="#123c3a" />
     <link rel="canonical" href="https://youngleonidas.com/" />
-    <meta property="og:title" content="Young Leonidas Pet Peptide Atlas" />
-    <meta property="og:description" content="Evidence-aware peptide education for dog and cat owners." />
+    <meta property="og:title" content="Better questions for every stage of your pet's life" />
+    <meta property="og:description" content="Pet-first peptide education for thoughtful dog and cat owners." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://youngleonidas.com/" />
     <meta property="og:image" content="https://youngleonidas.com/assets/pet-atlas-hero-v1.png" />
@@ -23,7 +23,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./site.css" />
+    <link rel="stylesheet" href="./site.css?v=20260721b" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -37,7 +37,55 @@
         }
       }
     </script>
-    <script src="./site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Young Leonidas veterinary advice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Young Leonidas provides general education and cannot diagnose, treat, or make decisions for an individual animal. A veterinarian remains responsible for clinical care."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Young Leonidas currently sell pet peptides?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The current site is an educational atlas and journal. Any future commerce will require separate product, legal, safety, and transparency standards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can human peptide research be applied to pets?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not automatically. Species differences can affect receptors, metabolism, pharmacology, risk, and clinical relevance."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Young Leonidas label evidence?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The site distinguishes established veterinary biology, clinical evidence, preclinical research, human-only evidence, mechanism discussions, and unsupported claims."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Young Leonidas avoid dosing and sourcing guidance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Educational content should not become an invitation to self-treat an animal. Medication, dosing, and treatment questions belong with a qualified veterinarian."
+            }
+          }
+        ]
+      }
+    </script>
+    <script src="./site.js?v=20260721b" defer></script>
   </head>
   <body>
     <header class="pet-header">
@@ -66,10 +114,11 @@
         Menu
       </button>
       <nav class="pet-nav" id="pet-navigation" aria-label="Primary navigation">
+        <a href="#concerns">Health Concerns</a>
         <a href="#atlas">Health Atlas</a>
         <a href="#library">Peptide Library</a>
         <a href="./blog.html">Journal</a>
-        <a href="#standards">Research &amp; Safety</a>
+        <a class="nav-cta" href="#future">What Comes Next</a>
       </nav>
     </header>
 
@@ -82,25 +131,90 @@
         />
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="kicker"><span></span> Veterinary science, made navigable</p>
-          <h1 id="hero-title">Understand peptide research through a pet-first lens.</h1>
+          <p class="kicker"><span></span> Pet health. Peptide science. No hype.</p>
+          <h1 id="hero-title">Better questions for every stage of their life.</h1>
           <p class="hero-lede">
-            An independent educational atlas connecting peptide biology with mobility, metabolism,
-            skin health, healthy aging, and responsible veterinary research.
+            When the science feels scattered, start here. Explore peptide biology through the
+            health concerns that matter to dogs, cats, and the people who care for them.
           </p>
           <div class="hero-actions">
-            <a class="button button-dark" href="#atlas">Explore the health atlas</a>
-            <a class="button button-light" href="./blog.html">Read the latest research</a>
+            <a class="button button-dark" href="#concerns">Explore by health concern</a>
+            <a class="button button-light" href="./blog.html">Read the field notes</a>
           </div>
-          <p class="hero-note">Educational information only. Never a substitute for veterinary care.</p>
+          <p class="hero-note">Independent education only. Your veterinarian stays in charge of care.</p>
         </div>
       </section>
 
       <section class="trust-row" aria-label="Editorial principles">
-        <p><span>01</span> Species-aware context</p>
-        <p><span>02</span> Evidence clearly labeled</p>
+        <p><span>01</span> Built for pet owners</p>
+        <p><span>02</span> Evidence, clearly labeled</p>
         <p><span>03</span> Veterinary safety first</p>
-        <p><span>04</span> No dosing or sourcing</p>
+        <p><span>04</span> No miracle claims</p>
+      </section>
+
+      <section class="concerns section-wrap" id="concerns" aria-labelledby="concerns-title">
+        <div class="section-intro concerns-intro">
+          <div>
+            <p class="kicker kicker-dark"><span></span> Begin with what you notice</p>
+            <h2 id="concerns-title">What are you trying to understand?</h2>
+          </div>
+          <p>
+            Peptide conversations make more sense when they begin with biology, symptoms, and
+            species context rather than a list of compounds.
+          </p>
+        </div>
+
+        <div class="concern-grid">
+          <a class="concern-card concern-mobility" href="#atlas" data-atlas-target="mobility">
+            <span class="concern-number">01</span>
+            <span class="concern-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M18 13C25 18 29 24 30 31M46 51C39 46 35 40 34 33"/><circle cx="15" cy="10" r="6"/><circle cx="49" cy="54" r="6"/><path d="M25 27C31 22 39 26 40 33C41 40 33 45 27 41C21 37 20 31 25 27Z"/></svg>
+            </span>
+            <span class="concern-copy"><small>Mobility &amp; recovery</small><strong>When movement starts to change</strong><span>Explore joints, connective tissue, training load, and the limits of repair claims.</span></span>
+            <span class="concern-arrow">↗</span>
+          </a>
+
+          <a class="concern-card concern-metabolic" href="#atlas" data-atlas-target="metabolic">
+            <span class="concern-number">02</span>
+            <span class="concern-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M32 8C32 8 17 27 17 39C17 48 24 55 32 55C40 55 47 48 47 39C47 27 32 8 32 8Z"/><path d="M25 40C26 45 29 47 34 48"/></svg>
+            </span>
+            <span class="concern-copy"><small>Metabolism &amp; appetite</small><strong>When food, weight, or energy shifts</strong><span>Understand insulin, incretin signaling, appetite biology, and species differences.</span></span>
+            <span class="concern-arrow">↗</span>
+          </a>
+
+          <a class="concern-card concern-skin" href="#atlas" data-atlas-target="skin">
+            <span class="concern-number">03</span>
+            <span class="concern-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M8 25C18 15 25 35 35 25C45 15 50 31 57 22M8 36C18 26 25 46 35 36C45 26 50 42 57 33M9 47C18 39 25 56 35 47C44 39 50 52 56 44"/></svg>
+            </span>
+            <span class="concern-copy"><small>Skin &amp; coat</small><strong>When the outside reflects the inside</strong><span>Learn about barrier function, collagen, inflammation, and repair signaling.</span></span>
+            <span class="concern-arrow">↗</span>
+          </a>
+
+          <a class="concern-card concern-aging" href="#atlas" data-atlas-target="aging">
+            <span class="concern-number">04</span>
+            <span class="concern-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="7"/><path d="M32 12V5M32 59V52M12 32H5M59 32H52M18 18L13 13M51 51L46 46M46 18L51 13M13 51L18 46"/></svg>
+            </span>
+            <span class="concern-copy"><small>Healthy aging</small><strong>When the gray starts to show</strong><span>Explore cellular resilience, mitochondrial signaling, cognition, and healthspan.</span></span>
+            <span class="concern-arrow">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="learning-path" aria-labelledby="path-title">
+        <div class="section-wrap learning-path-inner">
+          <div class="path-heading">
+            <p class="kicker kicker-light"><span></span> A safer way to learn</p>
+            <h2 id="path-title">From concern to better conversation.</h2>
+          </div>
+          <ol class="path-steps">
+            <li><span>01</span><div><strong>Choose the concern</strong><p>Start with the system or change you want to understand.</p></div></li>
+            <li><span>02</span><div><strong>Read the evidence</strong><p>Separate established biology from early or unsupported claims.</p></div></li>
+            <li><span>03</span><div><strong>Talk with your veterinarian</strong><p>Use what you learn to prepare clearer, safer questions.</p></div></li>
+          </ol>
+        </div>
       </section>
 
       <section class="atlas-section section-wrap" id="atlas" aria-labelledby="atlas-title">
@@ -301,6 +415,63 @@
         </div>
       </section>
 
+      <section class="future-section" id="future" aria-labelledby="future-title">
+        <div class="future-inner section-wrap">
+          <div class="future-copy">
+            <p class="kicker kicker-light"><span></span> Building trust before a store</p>
+            <h2 id="future-title">The knowledge base comes first.</h2>
+            <p>
+              Young Leonidas is being built as an education platform before it becomes a shop.
+              Clear evidence, transparent boundaries, and veterinary context will remain part of
+              every future product conversation.
+            </p>
+            <div class="future-actions">
+              <a class="button button-cream" href="./blog.html">Follow the journal</a>
+              <a class="future-rss" href="./feed.xml">Subscribe via RSS <span>↗</span></a>
+            </div>
+          </div>
+          <div class="future-card" aria-label="Young Leonidas roadmap">
+            <p>Young Leonidas roadmap</p>
+            <ol>
+              <li class="is-current"><span>Now</span><strong>Education &amp; research literacy</strong></li>
+              <li><span>Next</span><strong>Expert-reviewed care resources</strong></li>
+              <li><span>Later</span><strong>Transparent, compliant commerce</strong></li>
+            </ol>
+            <small>No products are currently offered for sale.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section section-wrap" aria-labelledby="faq-title">
+        <div class="faq-heading">
+          <p class="kicker kicker-dark"><span></span> Straight answers</p>
+          <h2 id="faq-title">Before you go deeper.</h2>
+          <p>Five questions that define how this site approaches pet peptide research.</p>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Is this veterinary advice?<span>+</span></summary>
+            <p>No. Young Leonidas provides general education and cannot diagnose, treat, or make decisions for an individual animal. Your veterinarian remains responsible for clinical care.</p>
+          </details>
+          <details>
+            <summary>Do you currently sell pet peptides?<span>+</span></summary>
+            <p>No. The current site is an educational atlas and journal. Any future commerce will require separate product, legal, safety, and transparency standards.</p>
+          </details>
+          <details>
+            <summary>Can human peptide research be applied to pets?<span>+</span></summary>
+            <p>Not automatically. Species differences can affect receptors, metabolism, pharmacology, risk, and clinical relevance. Human findings are context, not pet-care instructions.</p>
+          </details>
+          <details>
+            <summary>How do you label evidence?<span>+</span></summary>
+            <p>We distinguish established veterinary biology, clinical evidence, preclinical research, human-only evidence, mechanism discussions, and unsupported claims.</p>
+          </details>
+          <details>
+            <summary>Why do you avoid dosing and sourcing guidance?<span>+</span></summary>
+            <p>Because educational content should not become an invitation to self-treat an animal. Questions about medications, dosing, or treatment belong with a qualified veterinarian.</p>
+          </details>
+        </div>
+      </section>
+
       <section class="standards" id="standards" aria-labelledby="standards-title">
         <div class="standards-inner section-wrap">
           <div class="standards-mark" aria-hidden="true">
@@ -328,10 +499,11 @@
       </div>
       <p>Independent education for responsible conversations with veterinary professionals.</p>
       <nav aria-label="Footer navigation">
+        <a href="#concerns">Concerns</a>
         <a href="#atlas">Atlas</a>
         <a href="#library">Library</a>
         <a href="./blog.html">Journal</a>
-        <a href="#standards">Standards</a>
+        <a href="#future">Roadmap</a>
         <a href="./privacy.html">Privacy</a>
         <a href="./terms.html">Terms</a>
       </nav>

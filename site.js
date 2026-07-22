@@ -73,18 +73,27 @@ if (speciesButtons.length && detailSpecies) {
 }
 
 if (atlasPins.length && detailTitle) {
+  const selectAtlasArea = (area) => {
+    const content = atlasContent[area];
+    const matchingPin = atlasPins.find((item) => item.dataset.area === area);
+    if (!content || !matchingPin) return;
+    atlasPins.forEach((item) => item.classList.toggle("is-active", item === matchingPin));
+    detailNumber.textContent = content.number;
+    detailCategory.textContent = content.category;
+    detailTitle.textContent = content.title;
+    detailDescription.textContent = content.description;
+    detailSpecies.textContent = speciesNames[activeSpecies];
+    detailEvidence.textContent = content.evidence;
+  };
+
   atlasPins.forEach((pin) => {
     pin.addEventListener("click", () => {
-      const content = atlasContent[pin.dataset.area];
-      if (!content) return;
-      atlasPins.forEach((item) => item.classList.toggle("is-active", item === pin));
-      detailNumber.textContent = content.number;
-      detailCategory.textContent = content.category;
-      detailTitle.textContent = content.title;
-      detailDescription.textContent = content.description;
-      detailSpecies.textContent = speciesNames[activeSpecies];
-      detailEvidence.textContent = content.evidence;
+      selectAtlasArea(pin.dataset.area);
     });
+  });
+
+  document.querySelectorAll("[data-atlas-target]").forEach((link) => {
+    link.addEventListener("click", () => selectAtlasArea(link.dataset.atlasTarget));
   });
 }
 
