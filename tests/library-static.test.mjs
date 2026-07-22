@@ -1,64 +1,64 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
-import { dirname, join } from "node:path";
+import { access, readFile, readdir } from "node:fs/promises";
+import { dirname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
-const html = await readFile(join(root, "index.html"), "utf8");
-const script = await readFile(join(root, "script.js"), "utf8");
-const styles = await readFile(join(root, "styles.css"), "utf8");
+const index = await readFile(join(root, "index.html"), "utf8");
+const blog = await readFile(join(root, "blog.html"), "utf8");
+const script = await readFile(join(root, "site.js"), "utf8");
+const styles = await readFile(join(root, "site.css"), "utf8");
+const sitemap = await readFile(join(root, "sitemap.xml"), "utf8");
+const feed = await readFile(join(root, "feed.xml"), "utf8");
 
-assert.match(html, /id="peptide-library"/, "renders a peptide library section");
-assert.match(html, /id="library-card-grid"/, "renders a library card grid");
-assert.match(html, /id="library-drawer"/, "renders a peptide detail drawer");
-assert.doesNotMatch(html, /id="bond-lab"/, "removes the old bond lab section");
-assert.doesNotMatch(html, /id="curriculum"/, "removes the old learning path section");
+assert.match(index, /Pet Peptide Atlas/, "uses the pet-focused brand");
+assert.match(index, /id="atlas"/, "renders the interactive health atlas");
+assert.match(index, /id="library"/, "renders the peptide library");
+assert.match(index, /species-button/, "renders the dog and cat selector");
+assert.match(index, /Veterinary context is not an optional footnote/, "renders the editorial safety standard");
+assert.doesNotMatch(index, /Interactive Peptide Atlas/, "removes the retired human-focused title");
 
-assert.match(script, /const peptideLibrary\s*=/, "defines dedicated peptide library data");
-assert.match(script, /const libraryCategories\s*=/, "defines library categories");
+assert.match(blog, /data-blog-filter="all"/, "renders journal filters");
+assert.match(blog, /4 launch articles/, "publishes the initial journal collection");
+assert.match(blog, /application\/rss\+xml/, "advertises the RSS feed");
+assert.match(script, /const atlasContent\s*=/, "defines health atlas content");
+assert.match(script, /dataset\.blogCategory/, "supports journal filtering");
+assert.match(styles, /\.article-layout/, "includes long-form article layout styles");
+assert.match(styles, /@media \(max-width: 620px\)/, "includes a mobile breakpoint");
 
-const categoryIds = ["metabolic", "recovery", "skin", "longevity", "research"];
-for (const id of categoryIds) {
-  assert.match(script, new RegExp(`id: "${id}"`), `includes ${id} library category`);
+const articleNames = (await readdir(join(root, "articles"))).filter((name) => name.endsWith(".html"));
+assert.equal(articleNames.length, 4, "publishes four launch articles");
+
+for (const name of articleNames) {
+  const article = await readFile(join(root, "articles", name), "utf8");
+  assert.match(article, /rel="canonical"/, `${name} has a canonical URL`);
+  assert.match(article, /"@type":"BlogPosting"|"@type": "BlogPosting"/, `${name} has BlogPosting schema`);
+  assert.match(article, /Veterinary safety note/, `${name} includes a veterinary safety note`);
+  assert.match(article, /References/, `${name} includes references`);
+  assert.match(sitemap, new RegExp(name.replace(".", "\\.")), `${name} appears in the sitemap`);
+  assert.match(feed, new RegExp(name.replace(".", "\\.")), `${name} appears in the RSS feed`);
 }
 
-const requiredEntries = [
-  "Insulin",
-  "GLP-1",
-  "BPC-157 research discussions",
-  "GHK-Cu / copper tripeptide-1",
-  "Epitalon",
-  "RUO labeling",
+const htmlFiles = [
+  "index.html",
+  "blog.html",
+  "privacy.html",
+  "terms.html",
+  "404.html",
+  ...articleNames.map((name) => join("articles", name)),
 ];
 
-for (const entry of requiredEntries) {
-  assert.match(script, new RegExp(entry.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `includes ${entry}`);
+for (const relativeFile of htmlFiles) {
+  const filePath = join(root, relativeFile);
+  const source = await readFile(filePath, "utf8");
+  const hrefs = [...source.matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)].map((match) => match[1]);
+  for (const href of hrefs) {
+    if (/^(https?:|mailto:)/.test(href)) continue;
+    const resolved = normalize(join(dirname(filePath), href));
+    await access(resolved).catch(() => {
+      assert.fail(`${relativeFile} links to missing local file: ${href}`);
+    });
+  }
 }
 
-assert.match(styles, /--fixed-header-clearance:/, "defines a shared fixed header clearance");
-assert.match(styles, /\.library-drawer\s*{[^}]*top:\s*var\(--fixed-header-clearance\)/s, "offsets the library drawer below the fixed header");
-assert.match(styles, /\.library-drawer-backdrop\s*{[^}]*inset:\s*var\(--fixed-header-clearance\)\s+0\s+0/s, "keeps the drawer backdrop below the fixed header");
-assert.match(styles, /\.peptide-library\.reveal(?:\.is-visible)?\s*{[^}]*transform:\s*none/s, "prevents reveal transforms from re-parenting the fixed library drawer");
-
-assert.match(script, /const researchUseHotspots\s*=/, "defines Research Use room hotspots");
-assert.match(script, /research:\s*{[\s\S]*interaction:\s*"hotspots"/, "enables hotspot interaction for Research Use");
-assert.match(script, /research:\s*{[\s\S]*embeddedCopy:\s*true/, "uses clean hotspot scene for Research Use instead of permanent overlay panels");
-
-const requiredResearchHotspots = [
-  "research-peptide-definition",
-  "scientific-workflow",
-  "analysis-observation",
-  "handling-preparation",
-  "samples-variables",
-  "sourcing-storage",
-  "quality-documentation",
-  "identity-verification",
-];
-
-for (const hotspotId of requiredResearchHotspots) {
-  assert.match(script, new RegExp(`id: "${hotspotId}"`), `includes ${hotspotId} Research Use hotspot`);
-}
-
-assert.match(script, /What \\"Research Peptide\\" Means/, "includes the Research Peptide definition panel");
-assert.match(script, /Quality Documentation/, "includes the quality documentation trust panel");
-assert.match(styles, /data-room-theme="research"[\s\S]*--hotspot-accent:\s*#49bfd3/i, "applies cyan Research Use hotspot theme");
+console.log(`Verified pet atlas, journal, ${articleNames.length} articles, local links, sitemap, and RSS feed.`);

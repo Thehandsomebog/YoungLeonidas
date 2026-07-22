@@ -1,47 +1,33 @@
-# Young Leonidas
+# Young Leonidas Pet Peptide Atlas
 
-Static GitHub Pages site for `youngleonidas.com`, now focused on an
-interactive educational peptide atlas.
+Static GitHub Pages publication for `youngleonidas.com`. The site is focused on
+species-aware peptide education for dog and cat owners, with an interactive
+health atlas, research dossiers, and a crawlable editorial journal.
 
-## Included files
+## Public structure
 
-- `index.html`: interactive peptide atlas landing page
-- `assets/peptide-learning-hub.png`: main clickable campus image
-- `assets/peptide-campus-atlas.png`: alternate campus art asset
-- `assets/foundations-of-peptides.png`: Foundations deep-dive room image
-- `assets/performance-recovery-lab.png`: Performance / Recovery deep-dive room image
-- `assets/metabolic-peptides.png`: Metabolic deep-dive room image
-- `assets/skin-repair-peptides.png`: Skin / Repair deep-dive room image
-- `assets/longevity-cellular-peptides.png`: Longevity / Cellular deep-dive room image
-- `assets/research-use-peptides.png`: Research Use deep-dive room image
-- `privacy.html`: privacy policy
-- `terms.html`: terms of service
-- `styles.css`: styling and responsive layout
-- `script.js`: reveal, campus map, deep-dive room, hotspot, and peptide library interactions
-- `404.html`: custom not-found page
-- `.nojekyll`: serves the site directly without Jekyll processing
-- `CNAME`: custom domain binding for `youngleonidas.com`
-- `robots.txt`: crawl directives
-- `sitemap.xml`: public sitemap
-- `favicon.svg`: browser tab icon
+- `index.html`: pet-focused homepage, health atlas, and featured dossiers
+- `blog.html`: filterable journal index
+- `articles/`: referenced educational articles with Article schema
+- `site.css`: shared production design system
+- `site.js`: navigation, atlas, and filter interactions
+- `assets/pet-atlas-hero-v1.png`: homepage hero artwork
+- `feed.xml`: RSS 2.0 journal feed
+- `sitemap.xml`: search-engine sitemap
+- `privacy.html` and `terms.html`: current static-publication policies
 
-## Publish on GitHub Pages
+## Editorial boundaries
 
-1. Push these files to `main`.
-2. In GitHub, open `Settings` -> `Pages`.
-3. Set `Source` to `Deploy from a branch`.
-4. Choose `main` and `/(root)`.
-5. Save.
+The current release is educational only. It does not offer products, dosing,
+sourcing, treatment protocols, or individualized veterinary guidance. Content
+distinguishes established veterinary use, target-species research, preclinical
+evidence, human-only evidence, and unsupported claims.
 
-## Domain
+If commerce is added later, product pages, checkout, privacy disclosures,
+terms, regulatory review, and jurisdiction-specific compliance must be added
+before launch. Education should remain editorially distinct from sales.
 
-The repo is configured for:
+## Publishing
 
-```txt
-youngleonidas.com
-```
-
-## Content direction
-
-The homepage is educational only. It avoids dosing, sourcing, treatment,
-diagnosis, cure, or self-administration guidance for peptides.
+GitHub Pages serves the repository root from `main`. The custom domain is set
+through `CNAME`.

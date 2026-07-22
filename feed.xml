@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Young Leonidas Pet Peptide Research Journal</title>
+    <link>https://youngleonidas.com/blog.html</link>
+    <description>Species-aware educational articles about peptide biology and veterinary research.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://youngleonidas.com/feed.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Why human peptide findings cannot simply be applied to pets</title>
+      <link>https://youngleonidas.com/articles/translating-peptide-research-to-pets.html</link>
+      <guid isPermaLink="true">https://youngleonidas.com/articles/translating-peptide-research-to-pets.html</guid>
+      <pubDate>Tue, 21 Jul 2026 12:00:00 GMT</pubDate>
+      <description>A species-aware guide to translating peptide research for dogs and cats.</description>
+    </item>
+    <item>
+      <title>Insulin in dogs and cats: one peptide, different disease patterns</title>
+      <link>https://youngleonidas.com/articles/insulin-dogs-cats.html</link>
+      <guid isPermaLink="true">https://youngleonidas.com/articles/insulin-dogs-cats.html</guid>
+      <pubDate>Tue, 21 Jul 2026 11:00:00 GMT</pubDate>
+      <description>An educational overview of insulin peptide biology and species-specific diabetes patterns.</description>
+    </item>
+    <item>
+      <title>What tissue repair research actually tells us</title>
+      <link>https://youngleonidas.com/articles/tissue-repair-research.html</link>
+      <guid isPermaLink="true">https://youngleonidas.com/articles/tissue-repair-research.html</guid>
+      <pubDate>Tue, 21 Jul 2026 10:00:00 GMT</pubDate>
+      <description>The difference between tissue repair mechanisms, preclinical models, and proven veterinary treatments.</description>
+    </item>
+    <item>
+      <title>How to read an animal-study headline</title>
+      <link>https://youngleonidas.com/articles/how-to-read-animal-study.html</link>
+      <guid isPermaLink="true">https://youngleonidas.com/articles/how-to-read-animal-study.html</guid>
+      <pubDate>Tue, 21 Jul 2026 09:00:00 GMT</pubDate>
+      <description>A practical framework for evaluating species, models, endpoints, replication, and regulatory context.</description>
+    </item>
+  </channel>
+</rss>
