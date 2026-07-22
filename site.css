@@ -331,6 +331,122 @@ button {
   font-size: 15px;
 }
 
+.story-section {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(60px, 8vw, 125px);
+  align-items: center;
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.story-portrait {
+  margin: 0;
+}
+
+.story-image-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border-radius: 28px;
+  background: #d9d6cc;
+  box-shadow: var(--shadow);
+}
+
+.story-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.story-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.story-age {
+  position: absolute;
+  right: 22px;
+  bottom: 22px;
+  padding: 11px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  color: white;
+  background: rgba(8, 41, 39, 0.78);
+  box-shadow: 0 10px 30px rgba(10, 28, 26, 0.2);
+  backdrop-filter: blur(10px);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.story-portrait figcaption {
+  margin-top: 13px;
+  color: #70807b;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.story-copy {
+  max-width: 690px;
+}
+
+.story-copy h2 {
+  margin: 0 0 28px;
+  font-family: "Newsreader", serif;
+  font-size: clamp(58px, 7vw, 98px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.story-copy > p:not(.kicker):not(.story-note) {
+  margin: 0 0 20px;
+  color: var(--ink-soft);
+  font-size: 16px;
+  line-height: 1.78;
+}
+
+.story-copy .story-lede {
+  color: var(--ink);
+  font-family: "Newsreader", serif;
+  font-size: clamp(25px, 2.6vw, 36px);
+  line-height: 1.25;
+}
+
+.story-copy blockquote {
+  margin: 32px 0;
+  padding: 24px 0 24px 28px;
+  border-left: 2px solid var(--gold);
+  color: var(--forest);
+  font-family: "Newsreader", serif;
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.2;
+}
+
+.story-note {
+  margin: 30px 0 0;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  color: #677570;
+  background: #f1eee5;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.story-link {
+  display: inline-flex;
+  margin-top: 28px;
+}
+
 .concerns {
   padding-top: 130px;
   padding-bottom: 70px;
@@ -1519,6 +1635,7 @@ button {
   .section-intro,
   .atlas-board,
   .standards-inner,
+  .story-section,
   .learning-path-inner,
   .future-inner,
   .faq-section {
@@ -1527,6 +1644,15 @@ button {
 
   .concern-grid {
     grid-template-columns: 1fr;
+  }
+
+  .story-section {
+    gap: 55px;
+  }
+
+  .story-portrait {
+    width: min(620px, 100%);
+    margin-inline: auto;
   }
 
   .concern-card {
@@ -1633,6 +1759,7 @@ button {
   .atlas-section,
   .journal,
   .library-section,
+  .story-section,
   .concerns,
   .faq-section {
     padding-top: 90px;
@@ -1662,6 +1789,28 @@ button {
 
   .concerns-intro {
     margin-bottom: 34px;
+  }
+
+  .story-section {
+    gap: 40px;
+  }
+
+  .story-image-wrap {
+    border-radius: 22px;
+  }
+
+  .story-copy h2 {
+    margin-bottom: 22px;
+    font-size: 58px;
+  }
+
+  .story-copy .story-lede {
+    font-size: 27px;
+  }
+
+  .story-copy blockquote {
+    margin: 26px 0;
+    font-size: 29px;
   }
 
   .concern-card {
