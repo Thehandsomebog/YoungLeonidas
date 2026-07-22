@@ -46,6 +46,18 @@ for (const name of articleNames) {
   assert.match(article, /References/, `${name} includes references`);
   assert.match(sitemap, new RegExp(name.replace(".", "\\.")), `${name} appears in the sitemap`);
   assert.match(feed, new RegExp(name.replace(".", "\\.")), `${name} appears in the RSS feed`);
+  const relatedArticleLinks = new Set(
+    [...article.matchAll(/href="\.\/([^"#]+\.html)"/g)]
+      .map((match) => match[1])
+      .filter((href) => href !== name),
+  );
+  assert.ok(relatedArticleLinks.size >= 2, `${name} links to at least two related articles`);
+}
+
+for (const utilityPage of ["privacy.html", "terms.html"]) {
+  const utilitySource = await readFile(join(root, utilityPage), "utf8");
+  assert.match(utilitySource, /name="robots" content="noindex,follow"/, `${utilityPage} is excluded from search results`);
+  assert.doesNotMatch(sitemap, new RegExp(utilityPage.replace(".", "\\.")), `${utilityPage} is excluded from the sitemap`);
 }
 
 const htmlFiles = [
